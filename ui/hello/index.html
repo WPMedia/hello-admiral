@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <base href="/hello/">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Hello Admiral</title>
+        <link rel="stylesheet" href="../hello/css/bootstrap.css"/>
+        <link rel="stylesheet" href="../hello/css/hello.css"/>
+        <link rel="stylesheet" href="../hello/libs/font-awesome/css/font-awesome.min.css"/>
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300italic,300,500,700,100,900,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body ng-app="helloApp">
+        <div id="padding-container" ui-view></div>
+
+        <!-- external libraries-->
+        <script src="../hello/libs/jquery/dist/jquery.min.js"></script>
+        <script src="../hello/libs/angular/angular.js"></script>
+        <script src="../hello/libs/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="../hello/libs/angular-promise-tracker/promise-tracker.js"></script>
+        <script src="../hello/libs/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+        <script src="../hello/config/properties.js"></script>
+        <script src="module.js"></script>
+        <script src="controllers/hello-controller.js"></script>
+        <script src="services/hello-service.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,19 @@
+ui:
+  build: .
+  dockerfile: ui/Dockerfile
+  ports:
+    - "9999:80"
+  environment:
+    HELLO_API: http://localhost.nile.works:9898
+
+api:
+  build: .
+  dockerfile: api/Dockerfile
+  command: bash -c "java -jar /hello-admiral/api/target/hello-admiral.jar server /hello-admiral/api/hello-admiral.yml"
+  ports:
+    - "9898:8080"
+  environment:
+    ARC_AUTH_URI: https://arc-auth.internal.arc.nile.works/api/v1/auth
+    ARC_AUTH_USER: admiral
+    ARC_AUTH_PASS: VUUviymOWjnW57O^8OgXA*0DR7rA%Juh
+  

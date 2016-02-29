@@ -1,0 +1,51 @@
+error_log /dev/stdout info;
+
+worker_processes 1;
+
+events {
+  worker_connections 1024;
+}
+
+http {
+  include       /etc/nginx/mime.types;
+  default_type  application/octet-stream;
+  access_log /dev/stdout;
+  client_body_buffer_size 10K;
+  client_header_buffer_size 1k;
+  client_max_body_size 8m;
+  large_client_header_buffers 2 1k;
+  client_body_timeout 12;
+  client_header_timeout 12;
+  keepalive_timeout 15;
+  send_timeout 10;
+
+  gzip             on;
+  gzip_comp_level  2;
+  gzip_min_length  1000;
+  gzip_proxied     expired no-cache no-store private auth;
+  gzip_types       text/plain application/x-javascript application/json text/css;
+
+  server {
+    listen       80;
+    root         /hello-admiral;
+
+
+
+    location ~* /(hello)/(css|config|libs) {
+          rewrite ^/(hello)/css/(.*)$ /css/$2 break;
+          rewrite ^/(hello)/libs/(.*)$ /libs/$2 break;
+          rewrite ^/(hello)/config/(.*)$ /config/$2 break;
+
+          try_files $uri =404;
+    }
+
+    location / {
+      try_files      $uri /hello/index.html =404;
+    }
+
+    location /hello {
+      try_files $uri /hello/index.html =404;
+    }
+
+  }
+}

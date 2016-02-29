@@ -1,0 +1,39 @@
+{
+  "port": 8080,
+  "cluster": "arc.nile.works",
+  "routes": [{"path": "/api", "external": false}],
+  "builds": [{"notify": "arc-platform-ops", "branch": "master", "version": "1.0.0", "autodeploy": true, "tags": ["latest"]}],
+  "stages": [
+   {
+    "name": "alpha",
+    "domain": "hello-admiral-alpha.internal.arc.nile.works",
+    "http": {"insecure": true},
+    "scale": 3,
+    "environment": {
+      "ARC_AUTH_URI": "https://arc-auth-alpha.internal.arc.nile.works",
+      "ARC_AUTH_USER": "admiral",
+      "ARC_AUTH_PASS": "VUUviymOWjnW57O^8OgXA*0DR7rA%Juh"
+    }
+  },  {
+    "name": "beta",
+    "domain": "hello-admiral-beta.internal.arc.nile.works",
+    "http": {"insecure": true},
+    "scale": 3,
+    "environment": {
+      "ARC_AUTH_URI": "https://arc-auth-beta.internal.arc.nile.works",
+      "ARC_AUTH_USER": "admiral",
+      "ARC_AUTH_PASS": "VUUviymOWjnW57O^8OgXA*0DR7rA%Juh"
+    }
+  }, {
+    "name": "prod",
+    "domain": "hello-admiral.internal.arc.nile.works",
+    "http": {"insecure": true},
+    "scale": 3,
+    "environment": {
+      "ARC_AUTH_URI": "https://arc-auth.internal.arc.nile.works",
+      "ARC_AUTH_USER": "admiral",
+      "ARC_AUTH_PASS": "VUUviymOWjnW57O^8OgXA*0DR7rA%Juh"
+    }
+  }
+  ]
+}

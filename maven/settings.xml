@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.1.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <servers>
+        <server>
+            <id>releases</id>
+            <username>build</username>
+            <password>AP8VMFcypAxqtKzf9juizc6KAAw</password>
+        </server>
+        <server>
+            <id>snapshots</id>
+            <username>build</username>
+            <password>AP8VMFcypAxqtKzf9juizc6KAAw</password>
+        </server>
+        <server>
+            <id>plugin-releases</id>
+            <username>build</username>
+            <password>AP8VMFcypAxqtKzf9juizc6KAAw</password>
+        </server>
+        <server>
+            <id>plugin-snapshots</id>
+            <username>build</username>
+            <password>AP8VMFcypAxqtKzf9juizc6KAAw</password>
+        </server>
+        <server>
+            <id>remote-repos</id>
+            <username>build</username>
+            <password>AP8VMFcypAxqtKzf9juizc6KAAw</password>
+        </server>
+    </servers>
+    <mirrors>
+        <mirror>
+            <id>remote-repos</id>
+            <mirrorOf>*,!releases,!snapshots,!plugin-releases,!plugin-snapshots</mirrorOf>
+            <name>remote-repos</name>
+            <url>http://washingtonpost.artifactoryonline.com/washingtonpost/remote-repos</url>
+        </mirror>
+    </mirrors>
+    <profiles>
+        <profile>
+            <id>artifactory</id>
+            <repositories>
+                <repository>
+                    <id>releases</id>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <name>libs-release</name>
+                    <url>http://washingtonpost.artifactoryonline.com/washingtonpost/libs-release</url>
+                </repository>
+                <repository>
+                    <id>snapshots</id>
+                    <snapshots />
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <name>libs-snapshot</name>
+                    <url>http://washingtonpost.artifactoryonline.com/washingtonpost/libs-snapshot</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <!-- We map our plugin repos to the standard libs-* repos because the Washington Post
+                     doesn't build and release so many maven plugins to be worth maintaining a
+                     separate pair of repos for them -->
+                <pluginRepository>
+                    <id>plugin-releases</id>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <name>plugins-release</name>
+                    <url>http://washingtonpost.artifactoryonline.com/washingtonpost/libs-release</url>
+                </pluginRepository>
+                <pluginRepository>
+                    <id>plugin-snapshots</id>
+                    <snapshots />
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <name>plugins-snapshot</name>
+                    <url>http://washingtonpost.artifactoryonline.com/washingtonpost/libs-snapshot</url>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>artifactory</activeProfile>
+    </activeProfiles>
+</settings>

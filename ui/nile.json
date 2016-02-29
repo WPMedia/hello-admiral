@@ -1,0 +1,31 @@
+{
+  "port": 80,
+  "cluster": "arc.nile.works",
+  "routes": [{"path": "/hello", "external": false}],
+  "http": {"insecure": true},
+  "builds": [{"notify": "arc-platform-ops", "branch": "master", "version": "1.0.0", "autodeploy": true, "tags": ["latest"]}],
+  "stages": [
+    {
+    "name": "alpha",
+    "domain": "hello-admiral-ui-alpha.internal.arc.nile.works",
+    "scale": 3,
+    "environment": {
+      "HELLO_API": "https://api.alpha.arcpublishing.com/hello"
+    }
+  },  {
+    "name": "beta",
+    "domain": "hello-admiral-ui-beta.internal.arc.nile.works",
+    "scale": 3,
+    "environment": {
+      "HELLO_API": "https://api.beta.arcpublishing.com/hello"
+    }
+  }, {
+    "name": "prod",
+    "domain": "hello-admiral-ui.internal.arc.nile.works",
+    "scale": 3,
+    "environment": {
+      "HELLO_API": "https://api.arcpublishing.com/hello"
+    }
+  }
+  ]
+}
