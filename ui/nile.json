@@ -3,14 +3,23 @@
   "cluster": "arc.nile.works",
   "routes": [{"path": "/hello", "external": false}],
   "http": {"insecure": true},
-  "builds": [{"notify": "arc-platform-ops", "branch": "master", "version": "1.0.0", "autodeploy": true, "tags": ["latest"]}],
+  "builds": [
+    {
+      "notify": "arc-platform-ops",
+      "branch": "master",
+      "version": "1.0.0",
+      "autodeploy": true,
+      "tags": [
+        "latest"
+      ]
+    }],
   "stages": [
     {
     "name": "alpha",
     "domain": "hello-admiral-ui-alpha.internal.arc.nile.works",
     "scale": 1,
     "environment": {
-      "HELLO_API": "https://hello-admiral-alpha.internal.arc.nile.work/hello"
+      "HELLO_API": "https://hello-admiral-alpha.internal.arc.nile.works/hello"
     }
   },  {
     "name": "beta",
