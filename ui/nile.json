@@ -8,21 +8,21 @@
     {
     "name": "alpha",
     "domain": "hello-admiral-ui-alpha.internal.arc.nile.works",
-    "scale": 3,
+    "scale": 1,
     "environment": {
       "HELLO_API": "https://api.alpha.arcpublishing.com/hello"
     }
   },  {
     "name": "beta",
     "domain": "hello-admiral-ui-beta.internal.arc.nile.works",
-    "scale": 3,
+    "scale": 1,
     "environment": {
       "HELLO_API": "https://api.beta.arcpublishing.com/hello"
     }
   }, {
     "name": "prod",
     "domain": "hello-admiral-ui.internal.arc.nile.works",
-    "scale": 3,
+    "scale": 1,
     "environment": {
       "HELLO_API": "https://api.arcpublishing.com/hello"
     }

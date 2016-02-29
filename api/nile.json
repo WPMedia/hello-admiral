@@ -8,9 +8,9 @@
     "name": "alpha",
     "domain": "hello-admiral-alpha.internal.arc.nile.works",
     "http": {"insecure": true},
-    "scale": 3,
+    "scale": 1,
     "environment": {
-      "ARC_AUTH_URI": "https://arc-auth-alpha.internal.arc.nile.works",
+      "ARC_AUTH_URI": "https://arc-auth-alpha.internal.arc.nile.works/api/v1/auth",
       "ARC_AUTH_USER": "admiral",
       "ARC_AUTH_PASS": "VUUviymOWjnW57O^8OgXA*0DR7rA%Juh"
     }
@@ -18,9 +18,9 @@
     "name": "beta",
     "domain": "hello-admiral-beta.internal.arc.nile.works",
     "http": {"insecure": true},
-    "scale": 3,
+    "scale": 1,
     "environment": {
-      "ARC_AUTH_URI": "https://arc-auth-beta.internal.arc.nile.works",
+      "ARC_AUTH_URI": "https://arc-auth-beta.internal.arc.nile.works/api/v1/auth",
       "ARC_AUTH_USER": "admiral",
       "ARC_AUTH_PASS": "VUUviymOWjnW57O^8OgXA*0DR7rA%Juh"
     }
@@ -28,9 +28,9 @@
     "name": "prod",
     "domain": "hello-admiral.internal.arc.nile.works",
     "http": {"insecure": true},
-    "scale": 3,
+    "scale": 1,
     "environment": {
-      "ARC_AUTH_URI": "https://arc-auth.internal.arc.nile.works",
+      "ARC_AUTH_URI": "https://arc-auth.internal.arc.nile.works/api/v1/auth",
       "ARC_AUTH_USER": "admiral",
       "ARC_AUTH_PASS": "VUUviymOWjnW57O^8OgXA*0DR7rA%Juh"
     }
