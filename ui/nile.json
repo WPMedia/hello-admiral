@@ -19,7 +19,7 @@
     "domain": "hello-admiral-ui-alpha.internal.arc.nile.works",
     "scale": 1,
     "environment": {
-      "HELLO_API": "https://hello-admiral-alpha.internal.arc.nile.works"
+      "HELLO_API": "https://api.alpha.arcpublishing.com/hello"
     }
   },  {
     "name": "beta",
